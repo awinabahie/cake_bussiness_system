@@ -35,4 +35,13 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'twilio' => [
+        'sid' => env('TWILIO_AUTH_SID'),
+        'token' => env('TWILIO_AUTH_TOKEN'),
+        'whatsapp_from' => env('TWILIO_WHATSAPP_FROM'),
+        'account_sid' => env('TWILIO_ACCOUNT_SID'),
+        'password' => env('TWILIO_AUTH_TOKEN'),
+        'username' => env('TWILIO_ACCOUNT_SID'),
+    ],
+
 ];

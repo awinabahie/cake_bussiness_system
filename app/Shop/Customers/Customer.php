@@ -22,6 +22,7 @@ class Customer extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone_number',
         'password',
         'status'
     ];
@@ -74,5 +75,10 @@ class Customer extends Authenticatable
     public function searchCustomer($term)
     {
         return self::search($term);
+    }
+
+    public function routeNotificationForWhatsApp()
+    {
+        return $this->phone_number;
     }
 }

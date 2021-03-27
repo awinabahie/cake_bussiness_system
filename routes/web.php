@@ -81,6 +81,8 @@ Route::namespace('Front')->group(function () {
         Route::namespace('Payments')->group(function () {
             Route::get('bank-transfer', 'BankTransferController@index')->name('bank-transfer.index');
             Route::post('bank-transfer', 'BankTransferController@store')->name('bank-transfer.store');
+            Route::get('send-to-whatsapp', 'WhatsappController@index')->name('send-to-whatsapp.index');
+            Route::post('send-to-whatsapp', 'WhatsappController@store')->name('send-to-whatsapp.store');
         });
 
         Route::namespace('Addresses')->group(function () {
@@ -102,3 +104,7 @@ Route::namespace('Front')->group(function () {
     Route::get("search", 'ProductController@search')->name('search.product');
     Route::get("{product}", 'ProductController@show')->name('front.get.product');
 });
+
+Route::get('front-custom/index', function () {
+			return view('front-custom\index');
+		});
