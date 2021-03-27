@@ -45,9 +45,11 @@ class OrderProcessed extends Notification
      */
     public function toWhatsApp($notifiable)
     {
+        $reference = $this->order->reference;
+        $totalproducts = $this->order->total_products;
         $total = $this->order->total;
         return (new WhatsAppMessage)
-                    ->content("Your total of purchase is: RM { $total }");
+                    ->content("Your order reference {$reference} and total of purchase is: RM {$total}");
     }
 
     /**
